@@ -1,40 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:head>
-        <title>Lab3</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js" type="text/javascript"></script>
-        <h:outputStylesheet name="css/styles.css"/>
-    </h:head>
-    <h:body id = "anim-background">
-        <div class="container">
-            <ui:include src="templates/header.xhtml"/>
+<ui:composition template="layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <div class="data main">
+            <ui:include src="compositions/clock.xhtml"></ui:include>
         </div>
-    </h:body>
-</f:view>
-<script type="text/javascript">
-    VANTA.BIRDS({
-        el: "#anim-background",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        forceAnimate: true,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        backgroundColor: 0xffffff,
-        color1: 0x0,
-        color2: 0xffffff,
-        colorMode: "lerp",
-        wingSpan: 13.00,
-        backgroundAlpha: 0.00
-    })
-</script>
-</html>
+    </ui:define>
+</ui:composition>
