@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:p="http://primefaces.org/ui">
+
+   <h:form id = "data-form">
+      <h:outputStylesheet library="css" name="form.css"/>
+      <div class="inputs">
+         <div class="single-field y-field">
+            <h:outputLabel for="y">Y</h:outputLabel>
+            <h:inputText id = "y" a:placeholder="От -3 до 3" />
+         </div>
+
+         <div class="single-field r-field">
+               <h:outputLabel for="r">R</h:outputLabel>
+               <h:inputText id = "r" a:placeholder="От 1 до 4"/>
+         </div>
+
+         <div class="single-field x-field">
+            <h:outputLabel for="x">X</h:outputLabel>
+            <h:inputText id="x" readonly="true" value="-2"/>
+            <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2"/>
+         </div>
+
+         <div class="notification" id = "exception">
+            <p>
+               Параметр R введен неправильно!
+            </p>
+         </div>
+      </div>
+      <div class = "additional">
+         <div class="single-field picture-field">
+            <canvas width="250" height="250">
+               Canvas
+            </canvas>
+         </div>
+         <h:commandButton value="Проверить" id="submit" disabled = "true" class = "hidden"/>
+      </div>
+   </h:form>
+</ui:composition>

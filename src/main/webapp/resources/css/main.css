@@ -19,7 +19,8 @@ p {
   margin: 5px 0;
 }
 
-input[type=button] {
+input[type=button],
+input[type=submit] {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -31,7 +32,8 @@ input[type=button] {
   margin-bottom: 5%;
 }
 
-input[type=button]:hover {
+input[type=button]:hover,
+input[type=submit]:hover {
   opacity: 0.8;
 }
 

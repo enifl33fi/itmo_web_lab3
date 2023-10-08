@@ -1,0 +1,106 @@
+form {
+  display: flex;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.single-field {
+  position: relative;
+  background-color: #141414;
+  border-radius: 20px;
+  text-align: center;
+  margin: 5% 3%;
+}
+
+.single-field input[type=text] {
+  border-radius: 10px;
+  border-width: 0;
+  border-style: solid;
+  border-color: #66B2FF;
+  outline: none;
+  text-align: center;
+  font-family: inherit;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.hidden {
+  opacity: 0.8;
+}
+
+.shown {
+  opacity: 1;
+}
+
+.r-field input[type=text], .y-field input[type=text] {
+  margin-bottom: 10%;
+}
+
+.r-field, .y-field {
+  position: relative;
+  box-sizing: border-box;
+  width: 44%;
+  padding: 5%;
+}
+
+.x-field {
+  position: relative;
+  width: 100%;
+}
+
+.picture-field {
+  box-sizing: border-box;
+  padding: 5%;
+  margin-bottom: 10%;
+}
+
+.x-field label {
+  display: block;
+}
+
+.r-field label, .y-field label {
+  display: block;
+  margin-bottom: 15%;
+}
+
+.additional {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+.notification {
+  opacity: 0;
+  color: #FF9999;
+  text-align: center;
+  width: 100%;
+  margin: 0 3%;
+}
+
+.x-slider {
+  width: 80%;
+  margin: 3% auto;
+  border-radius: 10px;
+}
+
+.x-slider span:nth-of-type(1) {
+  border-color: #66B2FF;
+}
+
+.x-slider span:nth-of-type(1):hover,
+.x-slider span:nth-of-type(1):active {
+  background: #66B2FF;
+}
+
+.x-field .x-slider .ui-slider-range {
+  background: #66B2FF;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=form.css.map */
