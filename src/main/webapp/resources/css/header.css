@@ -1,0 +1,30 @@
+.header {
+  position: relative;
+  display: flex;
+  width: 70%;
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20%;
+}
+
+.header-info {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 2%;
+}
+
+.header a {
+  margin: 1% 5px;
+}
+
+.header .profile-pic {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: auto 10%;
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: auto;
+  background-color: #1D1E1E;
+  color: #D0D0D0;
+  font-family: "Lucida Sans Unicode", "Helvetica", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15% 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.data {
+  position: relative;
+  background-color: #282828;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
