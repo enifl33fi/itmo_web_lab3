@@ -1,0 +1,256 @@
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow:auto;
+    background-color: #1D1E1E;
+    color: #D0D0D0;
+    font-family: 'Lucida Sans Unicode', 'Helvetica', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 15% 0;
+}
+
+table {
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+th {
+    border-top: solid #D0D0D0 1px;
+}
+td, th {
+    border-right: solid #D0D0D0 1px;
+    border-bottom: solid #D0D0D0 1px;
+    padding: 5px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    border-left: solid #D0D0D0 1px;
+}
+td {
+    font-weight: lighter;
+}
+th {
+    background-color: #141414;
+}
+
+th:first-of-type {
+    border-top-left-radius: 8px;
+}
+th:last-of-type {
+    border-top-right-radius: 8px;
+}
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 8px;
+}
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 8px;
+}
+.back img{
+    margin-bottom: 1%;
+}
+
+p {
+    margin: 5px 0;
+}
+
+fieldset {
+    border: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+.scroll {
+    overflow: auto;
+    max-height: 30vh;
+}
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.scroll::-webkit-scrollbar-corner {
+    background-color: inherit;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background-color: #1D1E1E;
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #141414;
+    border-radius: 10px;
+}
+.data {
+    position: relative;
+    background-color: #282828;
+    border-radius: 20px;
+}
+.table-data {
+    padding: 5% 2%;
+}
+.main > form{
+    display: flex;
+    align-items: center;
+}
+.main {
+    margin-bottom: 20%;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    width: 70%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20%;
+}
+
+.header-info {
+    font-family: sans-serif;
+    color: #D0D0D0;
+    font-size: 18px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 2%;
+}
+
+.header a {
+    margin: 1% 5px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: auto 10%;
+}
+
+
+.inputs {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.single-field {
+    position: relative;
+    background-color: #141414;
+    border-radius: 20px;
+    text-align: center;
+    margin: 5% 3%;
+}
+
+.single-field input[type="text"] {
+    border-radius: 10px;
+    border-width: 0;
+    border-style: solid;
+    border-color: #66B2FF;
+    outline: none;
+    text-align: center;
+    font-family: inherit;
+    margin-bottom: 10%;
+    max-width:100%;
+    max-height:100%;
+    width: auto;
+    height: auto;
+}
+.hidden {
+    opacity: 0.8;
+}
+.shown {
+    opacity: 1.0;
+}
+input[type="submit"] {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #141414;
+    border-radius: 10px;
+    border-width: 0;
+    width: 80%;
+    min-width: 100px;
+    margin-bottom: 5%;
+
+}
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.r-field , .y-field {
+    position: relative;
+    box-sizing: border-box;
+    width: 44%;
+    padding: 5%;
+}
+.x-field {
+    position: relative;
+    width: 100%;
+}
+
+.picture-field {
+    box-sizing: border-box;
+    padding: 5%;
+    margin-bottom: 10%;
+}
+
+.picture-field img {
+    max-width:100%;
+    max-height:100%;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+.r-field label, .y-field label {
+    display: block;
+    margin-bottom: 15%;
+}
+
+.additional {
+    flex: 0 0 300px;
+    text-align: center;
+}
+.notification {
+    opacity: 0;
+    color: #FF9999;
+    text-align: center;
+    width: 100%;
+    margin: 0 3%;
+}
+
+@media (max-device-width: 1000px), (max-width: 1000px){
+    .header {
+        display: block;
+        text-align: center;
+    }
+    .header-info {
+        text-align: center;
+        margin-left: 2%;
+    }
+    .profile-pic {
+        margin-top: 5%;
+    }
+    .main > form {
+        display: block;
+    }
+    input[type="submit"] {
+        margin-bottom: 5%;
+    }
+    .inputs {
+        width: 100%;
+    }
+    .additional {
+        width: 100%;
+    }
+}
