@@ -2,9 +2,7 @@ const hourHand = document.getElementById("hour-hand")
 const minuteHand = document.getElementById("minute-hand")
 const secondHand = document.getElementById("second-hand")
 
-function setDate() {
-    const curTime = new Date();
-
+function setDate(curTime) {
     const seconds = curTime.getSeconds()
     const minutes = curTime.getMinutes()
     const hours = curTime.getHours() % 12
@@ -18,5 +16,3 @@ function setDate() {
     const hourDegrees = 90 + 360 * (hours / 12) + 30 * (minutes / 60)
     hourHand.style.transform = `rotate(${hourDegrees}deg)`
 }
-
-setInterval(setDate, 1000);

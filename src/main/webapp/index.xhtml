@@ -5,8 +5,20 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="content">
-        <div class="data main">
-            <ui:include src="compositions/clock.xhtml"></ui:include>
+        <h:outputStylesheet library="css" name="index-content.css"/>
+        <h:outputScript library="js" name="time.js" target="body"/>
+        <div class="data start-content">
+            <div class="clock-block">
+                <ui:include src="compositions/clock.xhtml"/>
+            </div>
+            <div class="navigation">
+                <div class="time-block">
+                    <p>Текущее время:</p>
+                    <p id="date"></p>
+                    <p id="time"></p>
+                </div>
+                <h:button value="К проверке"/>
+            </div>
         </div>
     </ui:define>
 </ui:composition>

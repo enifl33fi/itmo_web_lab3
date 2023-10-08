@@ -19,6 +19,22 @@ p {
   margin: 5px 0;
 }
 
+input[type=button] {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: #141414;
+  border-radius: 10px;
+  border-width: 0;
+  width: 80%;
+  min-width: 100px;
+  margin-bottom: 5%;
+}
+
+input[type=button]:hover {
+  opacity: 0.8;
+}
+
 .container {
   width: 50%;
   margin: 0 auto;

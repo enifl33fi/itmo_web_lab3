@@ -1,11 +1,11 @@
 .clock {
-  width: 250px;
-  height: 250px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
   position: relative;
   padding: 20px;
   border: 18px solid #282828;
-  box-shadow: 5px -5px 5px 0 #4e4e4e, -5px 8px 8px 0 black, inset -3px 5px 6px 0 black, inset 3px -3px 1px 0 black;
-  margin: 5% 3%;
+  box-shadow: 5px -5px 5px 0 #353535, -5px 8px 8px 0 #202020, inset -3px 5px 6px 0 #202020, inset 3px -3px 1px 0 #202020;
   border-radius: 50%;
 }
 
@@ -57,10 +57,10 @@
 .clock-inner {
   position: absolute;
   background: #282828;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
+  width: 78%;
+  height: 78%;
+  top: 11%;
+  left: 11%;
   border-radius: 50%;
   z-index: 1;
 }
