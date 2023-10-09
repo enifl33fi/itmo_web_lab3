@@ -5,22 +5,24 @@
                 xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui">
 
-   <h:form id = "data-form">
+   <h:form id = "data-form" prependId="false">
       <h:outputStylesheet library="css" name="form.css"/>
+      <h:outputScript library="js" name="validation.js" target="body"/>
+      <h:outputScript library="js" name="dynamic_canvas.js" target="body"/>
       <div class="inputs">
          <div class="single-field y-field">
             <h:outputLabel for="y">Y</h:outputLabel>
-            <h:inputText id = "y" a:placeholder="От -3 до 3" />
+            <h:inputText id = "y" a:placeholder="От -3 до 3" onkeyup="validateY()"/>
          </div>
 
          <div class="single-field r-field">
                <h:outputLabel for="r">R</h:outputLabel>
-               <h:inputText id = "r" a:placeholder="От 1 до 4"/>
+               <h:inputText id = "r" a:placeholder="От 1 до 4" onkeyup="validateR(); fillCanvas()"/>
          </div>
 
          <div class="single-field x-field">
             <h:outputLabel for="x">X</h:outputLabel>
-            <h:inputText id="x" readonly="true" value="-2"/>
+            <h:inputText id="x" readonly="true" value="-2" onkeyup="validateX()"/>
             <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2"/>
          </div>
 
