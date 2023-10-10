@@ -12,20 +12,19 @@
       <div class="inputs">
          <div class="single-field y-field">
             <h:outputLabel for="y">Y</h:outputLabel>
-            <h:inputText id = "y" a:placeholder="От -3 до 3" onkeyup="validateY()"/>
+            <h:inputText id = "y" value="#{resultStorage.resultForm.y}" a:placeholder="От -3 до 3" onkeyup="validateY()"/>
          </div>
 
          <div class="single-field r-field">
                <h:outputLabel for="r">R</h:outputLabel>
-               <h:inputText id = "r" a:placeholder="От 1 до 4" onkeyup="validateR(); fillCanvas()"/>
+               <h:inputText id = "r" value="#{resultStorage.resultForm.r}" a:placeholder="От 1 до 4" onkeyup="validateR(); fillCanvas()"/>
          </div>
 
          <div class="single-field x-field">
             <h:outputLabel for="x">X</h:outputLabel>
-            <h:inputText id="x" readonly="true" value="-2" onkeyup="validateX()"/>
-            <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2"/>
+            <h:inputText id="x" a:placeholder="От -2 до 2" value="#{resultStorage.resultForm.x}" onkeyup="validateX()"/>
+            <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2" onSlideEnd="validateX()"/>
          </div>
-
          <div class="notification" id = "exception">
             <p>
                Параметр R введен неправильно!
@@ -37,8 +36,18 @@
             <canvas width="250" height="250">
                Canvas
             </canvas>
+            <h:form style="display: none" prependId="false">
+               <h:inputHidden id="xVal" value="#{resultStorage.resultCanvas.x}"/>
+               <h:inputHidden id="yVal" value="#{resultStorage.resultCanvas.y}"/>
+               <h:inputHidden id="rVal" value="#{resultStorage.resultCanvas.r}"/>
+               <h:commandButton id="cvSubmit" action="#{resultStorage.addResult(resultStorage.resultCanvas.x, resultStorage.resultCanvas.y, resultStorage.resultCanvas.r)}" style="display: none">
+                  <f:ajax execute="@form" render="data-table" onevent="manageRequest"/>
+               </h:commandButton>
+            </h:form>
          </div>
-         <h:commandButton value="Проверить" id="submit" disabled = "true" class = "hidden"/>
+         <h:commandButton action="#{resultStorage.addResult(resultStorage.resultForm.x, resultStorage.resultForm.y, resultStorage.resultForm.r)}" value="Проверить" id="submit" styleClass="hidden">
+            <f:ajax execute="@form" render="data-table" onevent="manageRequest"/>
+         </h:commandButton>
       </div>
    </h:form>
 </ui:composition>

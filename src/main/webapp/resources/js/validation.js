@@ -4,7 +4,7 @@ const notValidColor = "#FF6666"
 const RegEx = /^-?\d+([.,]\d+)?$/
 
 let isFieldsValid = {
-    x:true,
+    x:false,
     y:false,
     r:false
 }

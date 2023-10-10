@@ -5,25 +5,36 @@
 
    <h:outputStylesheet library="css" name="table.css"/>
    <div class="scroll">
-      <h:dataTable id = "data-table">
-         <h:column>
+      <h:dataTable id = "data-table" value="#{resultStorage.results}" var="result">
+         <h:column class="td-0">
             <f:facet name="header">X</f:facet>
+            #{result.x}
          </h:column>
-         <h:column>
+         <h:column class="td-1">
             <f:facet name="header">Y</f:facet>
+            #{result.y}
          </h:column>
-         <h:column>
+         <h:column class="td-2">
             <f:facet name="header">R</f:facet>
+            #{result.r}
          </h:column>
-         <h:column>
+         <h:column class="td-3">
             <f:facet name="header">Date</f:facet>
+            #{result.curDate}
          </h:column>
-         <h:column>
+         <h:column class="td-4">
             <f:facet name="header">Script Time</f:facet>
+            #{result.scriptTime}
          </h:column>
-         <h:column>
+         <h:column class="td-5">
             <f:facet name="header">Result</f:facet>
+            <h:outputText styleClass="#{result.inArea ? 'green' : 'red'}" value="#{result.inArea ? 'С пивом потянет' : 'Говно, переделывай'}"/>
          </h:column>
       </h:dataTable>
+      <h:outputScript library="js" name="dynamic_table.js"/>
+      <h:outputScript>
+         updAllTime()
+      </h:outputScript>
+
    </div>
 </ui:composition>

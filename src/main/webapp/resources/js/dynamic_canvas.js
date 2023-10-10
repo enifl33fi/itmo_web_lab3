@@ -8,6 +8,7 @@ const rField = document.getElementById('r')
 
 window.onload = fillCanvas
 function fillCanvas() {
+    hideNotification()
     let rVal = commaHandle(rField)
     ctx.strokeStyle = "#D0D0D0"
     ctx.fillStyle = "#66B2FF88"
@@ -79,4 +80,72 @@ function fillCanvas() {
 
     }
     ctx.stroke()
+    if (isValidR(rVal))  {
+        drawAllCircles()
+    }
+}
+
+function drawCircle(x, y, isHit) {
+    ctx.fillStyle = "#FF9999"
+    if (isHit) {
+        ctx.fillStyle = "#99FF99"
+    }
+    let xCoord = width / 2 + (x * radius / rField.value)
+    let yCoord = height / 2 - (y * radius / rField.value)
+
+    ctx.beginPath()
+    ctx.arc(xCoord, yCoord, 3, 0, 2 * Math.PI)
+    ctx.fill()
+}
+
+function drawCircleFromCells(tCells) {
+    let x = parseFloat(tCells[0].innerHTML)
+    let y = parseFloat(tCells[1].innerHTML)
+    let inArea = tCells[5].innerHTML === "С пивом потянет"
+    drawCircle(x, y, inArea)
+}
+
+function drawLastRow() {
+    let table = document.getElementById("data-table")
+    let tRows  = table.rows
+    let tLen = tRows.length
+    let tCells = table.rows.item(tLen - 1).cells
+    drawCircleFromCells(tCells)
+}
+
+function drawAllCircles() {
+    let table = document.getElementById("data-table")
+    let tRows  = table.rows
+    let tLen = tRows.length
+    for (let i = 1; i < tLen; i++) {
+        let tCells = table.rows.item(i).cells
+        drawCircleFromCells(tCells)
+    }
+}
+
+cv.onclick = sendPressedPoint
+function sendPressedPoint(ev) {
+    let rVal = commaHandle(rField)
+    const btn = document.getElementById("cvSubmit")
+    const xFieldCv = document.getElementById("xVal")
+    const yFieldCv = document.getElementById("yVal")
+    const rFieldCv = document.getElementById("rVal")
+    if (isValidR(rVal))  {
+        let rect = cv.getBoundingClientRect();
+        let x = ev.clientX - rect.left;
+        let y = ev.clientY - rect.top;
+        let xCoord = Number((x - width / 2) * rVal / radius).toFixed(3)
+        let yCoord = Number((height / 2 - y) * rVal / radius).toFixed(3)
+        if (isValidX(xCoord) && isValidY(yCoord)) {
+            xFieldCv.value = xCoord
+            yFieldCv.value = yCoord
+            rFieldCv.value = rVal
+            btn.click()
+        } else {
+            drawCircle(xCoord, yCoord, false)
+        }
+    }
+    else {
+        showNotification()
+    }
 }

@@ -69,4 +69,12 @@ tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 8px;
 }
 
+.green {
+  color: #99FF99;
+}
+
+.red {
+  color: #FF9999;
+}
+
 /*# sourceMappingURL=table.css.map */
