@@ -12,17 +12,23 @@
       <div class="inputs">
          <div class="single-field y-field">
             <h:outputLabel for="y">Y</h:outputLabel>
-            <h:inputText id = "y" value="#{resultStorage.resultForm.y}" a:placeholder="От -3 до 3" onkeyup="validateY()"/>
+            <h:inputText id = "y" value="#{resultStorage.resultForm.y}" a:placeholder="От -3 до 3" onkeyup="validateY()">
+               <f:validateDoubleRange minimum="-3" maximum="3"/>
+            </h:inputText>
          </div>
 
          <div class="single-field r-field">
                <h:outputLabel for="r">R</h:outputLabel>
-               <h:inputText id = "r" value="#{resultStorage.resultForm.r}" a:placeholder="От 1 до 4" onkeyup="validateR(); fillCanvas()"/>
+               <h:inputText id = "r" value="#{resultStorage.resultForm.r}" a:placeholder="От 1 до 4" onkeyup="validateR(); fillCanvas()">
+                  <f:validateDoubleRange minimum="1" maximum="4"/>
+               </h:inputText>
          </div>
 
          <div class="single-field x-field">
             <h:outputLabel for="x">X</h:outputLabel>
-            <h:inputText id="x" a:placeholder="От -2 до 2" value="#{resultStorage.resultForm.x}" onkeyup="validateX()"/>
+            <h:inputText id="x" a:placeholder="От -2 до 2" value="#{resultStorage.resultForm.x}" onkeyup="validateX()">
+               <f:validateDoubleRange minimum="-2" maximum="2"/>
+            </h:inputText>
             <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2" onSlideEnd="validateX()"/>
          </div>
          <div class="notification" id = "exception">
@@ -37,9 +43,16 @@
                Canvas
             </canvas>
             <h:form style="display: none" prependId="false">
-               <h:inputHidden id="xVal" value="#{resultStorage.resultCanvas.x}"/>
-               <h:inputHidden id="yVal" value="#{resultStorage.resultCanvas.y}"/>
-               <h:inputHidden id="rVal" value="#{resultStorage.resultCanvas.r}"/>
+               <h:inputHidden id="xVal" value="#{resultStorage.resultCanvas.x}">
+                  <f:validateDoubleRange minimum="-2" maximum="2"/>
+               </h:inputHidden>
+               <h:inputHidden id="yVal" value="#{resultStorage.resultCanvas.y}">
+                  <f:validateDoubleRange minimum="-3" maximum="3"/>
+               </h:inputHidden>
+
+               <h:inputHidden id="rVal" value="#{resultStorage.resultCanvas.r}">
+                  <f:validateDoubleRange minimum="1" maximum="4"/>
+               </h:inputHidden>
                <h:commandButton id="cvSubmit" action="#{resultStorage.addResult(resultStorage.resultCanvas.x, resultStorage.resultCanvas.y, resultStorage.resultCanvas.r)}" style="display: none">
                   <f:ajax execute="@form" render="data-table" onevent="manageRequest"/>
                </h:commandButton>
