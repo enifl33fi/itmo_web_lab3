@@ -4,6 +4,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
    <ui:define name="content">
+      <h:button id="up-button" outcome="index" value="На главную"/>
       <h:outputStylesheet library="css" name="check-content.css"/>
       <h:outputScript library="js" name="managment.js"/>
       <div class="data main">
@@ -12,5 +13,6 @@
       <div class="data table-data">
          <ui:include src="compositions/result_table.xhtml"/>
       </div>
+      <h:button id="down-button" outcome="index" value="На главную"/>
    </ui:define>
 </ui:composition>
