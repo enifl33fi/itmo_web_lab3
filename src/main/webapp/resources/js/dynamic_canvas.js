@@ -101,7 +101,7 @@ function drawCircle(x, y, isHit) {
 function drawCircleFromCells(tCells) {
     let x = parseFloat(tCells[0].innerHTML)
     let y = parseFloat(tCells[1].innerHTML)
-    let inArea = tCells[5].innerHTML === "С пивом потянет"
+    let inArea = tCells[5].innerText === "С пивом потянет"
     drawCircle(x, y, inArea)
 }
 
