@@ -14,3 +14,12 @@
   flex: 1;
   text-align: center;
 }
+@media (max-device-width: 1200px), (max-width: 1200px){
+  .start-content {
+    display: block;
+  }
+  .clock-block {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+}

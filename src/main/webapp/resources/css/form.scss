@@ -2,7 +2,7 @@ $warn_color: #FF9999;
 $field_bg_color:#141414;
 $ok_color: #66B2FF;
 
-form{
+form {
   display: flex;
   align-items: center;
 }
@@ -101,4 +101,16 @@ form{
 .x-field .x-slider .ui-slider-range {
   background: $ok_color;
   border-radius: 10px;
+}
+@media (max-device-width: 1000px), (max-width: 1000px){
+  form {
+    display: block;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+  .additional {
+    width: 100%;
+  }
 }
