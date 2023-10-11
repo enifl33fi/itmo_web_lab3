@@ -1,3 +1,8 @@
+window.onload = function () {
+    fillCanvas()
+    buttonSwitch(true)
+}
+
 function manageRequest(data){
     if (data.status === "success") {
         drawLastRow()

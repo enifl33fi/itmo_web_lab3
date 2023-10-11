@@ -6,7 +6,6 @@ const fontSize = 12
 const ctx = cv.getContext("2d");
 const rField = document.getElementById('r')
 
-window.onload = fillCanvas
 function fillCanvas() {
     hideNotification()
     let rVal = commaHandle(rField)

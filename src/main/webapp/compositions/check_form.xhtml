@@ -58,7 +58,7 @@
                </h:commandButton>
             </h:form>
          </div>
-         <h:commandButton action="#{resultStorage.addResult(resultStorage.resultForm.x, resultStorage.resultForm.y, resultStorage.resultForm.r)}" value="Проверить" id="submit" styleClass="hidden">
+         <h:commandButton action="#{resultStorage.addResult(resultStorage.resultForm.x, resultStorage.resultForm.y, resultStorage.resultForm.r)}" value="Проверить" id="submit">
             <f:ajax execute="@form" render="data-table" onevent="manageRequest"/>
          </h:commandButton>
       </div>
