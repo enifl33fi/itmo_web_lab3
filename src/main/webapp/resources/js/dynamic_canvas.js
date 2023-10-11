@@ -85,12 +85,13 @@ function fillCanvas() {
 }
 
 function drawCircle(x, y, isHit) {
+    let rVal = commaHandle(rField)
     ctx.fillStyle = "#FF9999"
     if (isHit) {
         ctx.fillStyle = "#99FF99"
     }
-    let xCoord = width / 2 + (x * radius / rField.value)
-    let yCoord = height / 2 - (y * radius / rField.value)
+    let xCoord = width / 2 + (x * radius / rVal)
+    let yCoord = height / 2 - (y * radius / rVal)
 
     ctx.beginPath()
     ctx.arc(xCoord, yCoord, 3, 0, 2 * Math.PI)

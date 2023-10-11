@@ -4,6 +4,7 @@ window.onload = function () {
 }
 
 function manageRequest(data){
+    console.log(data.responseText)
     if (data.status === "success") {
         drawLastRow()
         updAllTime()

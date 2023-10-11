@@ -13,20 +13,24 @@
          <div class="single-field y-field">
             <h:outputLabel for="y">Y</h:outputLabel>
             <h:inputText id = "y" value="#{resultStorage.resultForm.y}" a:placeholder="От -3 до 3" onkeyup="validateY()" required="true">
+               <f:converter converterId="doubleLocaleConverter"/>
                <f:validateDoubleRange minimum="-3" maximum="3"/>
             </h:inputText>
          </div>
 
          <div class="single-field r-field">
-               <h:outputLabel for="r">R</h:outputLabel>
-               <h:inputText id = "r" value="#{resultStorage.resultForm.r}" a:placeholder="От 1 до 4" required="true" onkeyup="validateR(); fillCanvas()">
-                  <f:validateDoubleRange minimum="1" maximum="4"/>
-               </h:inputText>
+            <h:outputLabel for="r">R</h:outputLabel>
+            <h:inputText id = "r" value="#{resultStorage.resultForm.r}" a:placeholder="От 1 до 4" required="true" onkeyup="validateR(); fillCanvas()">
+               <f:converter converterId="doubleLocaleConverter"/>
+               <f:validateDoubleRange minimum="1" maximum="4"/>
+            </h:inputText>
+            <h:message for="r" />
          </div>
 
          <div class="single-field x-field">
             <h:outputLabel for="x">X</h:outputLabel>
             <h:inputText id="x" a:placeholder="От -2 до 2" value="#{resultStorage.resultForm.x}" onkeyup="validateX()" required="true">
+               <f:converter converterId="doubleLocaleConverter"/>
                <f:validateDoubleRange minimum="-2" maximum="2"/>
             </h:inputText>
             <p:slider id="x-slider" styleClass="x-slider" for="x" maxValue="2" minValue="-2" onSlideEnd="validateX()"/>
@@ -44,7 +48,7 @@
             </canvas>
          </div>
          <h:commandButton action="#{resultStorage.addResult(resultStorage.resultForm.x, resultStorage.resultForm.y, resultStorage.resultForm.r)}" value="Проверить" id="submit">
-            <f:ajax execute="@form" render="data-table" onevent="manageRequest"/>
+            <f:ajax execute="@form" render="data-table ex" onevent="manageRequest"/>
          </h:commandButton>
       </div>
    </h:form>
